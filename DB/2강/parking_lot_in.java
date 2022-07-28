@@ -4,11 +4,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class P23 {
+public class parking_lot_in {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException{
 		// TODO Auto-generated method stub
@@ -17,7 +16,7 @@ public class P23 {
 		//DBMS 서버 접속
 		Statement stmt = conn.createStatement();//stmt객체 생성
 		
-		File f = new File("C:\\Users\\kopo\\Desktop\\전국무료와이파이표준데이터.txt");
+		File f = new File("C:\\Users\\kopo\\Desktop\\한국교통안전공단_전국공영주차장정보_20191224.txt");
 		BufferedReader br = new BufferedReader(new FileReader(f));
 		
 		String readtxt;
@@ -33,7 +32,7 @@ public class P23 {
 			String[] field = readtxt.split("\t");
 			String QueryTxt;
 			//데이터 삽입
-			QueryTxt = String.format("insert into freewifi ("
+			QueryTxt = String.format("insert into parking ("
 					+ "inst_place,inst_place_detail,inst_city,inst_country,inst_place_flag, "
 					+ "service_provider,wifi_ssid,inst_date,place_addr_road,place_addr_load,"
 					+ "manage_office,manage_office_phone,latitude,longitude,write_date)"

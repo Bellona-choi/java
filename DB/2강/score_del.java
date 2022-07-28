@@ -3,7 +3,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class P22_1 {
+public class score_del {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
@@ -11,7 +11,7 @@ public class P22_1 {
 		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.103:33060/kopoctc", "root", "kopo43");
 		//DBMS 서버 접속
 		Statement stmt = conn.createStatement();//stmt객체 생성
-		stmt.execute("drop table freewifi;"); //테이블 제거하기
+		stmt.execute("drop table score;"); //테이블 제거하기
 				
 		
 		stmt.close();//stmt닫기
